@@ -50,6 +50,7 @@ declare_mlir_python_sources(TorchMLIRPythonSources.TopLevel
   SOURCES
     __init__.py
     compiler_utils.py
+    tensorsc.py
 )
 
 declare_mlir_python_sources(TorchMLIRPythonSources.Dialects

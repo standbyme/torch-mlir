@@ -42,6 +42,12 @@ namespace {
 void mlir::torch::registerTorchConversionPasses() {
   ::registerPasses();
   mlir::PassPipelineRegistration<Torch::TorchLoweringPipelineOptions>(
+      "linalg-on-tensors-backend-to-tensorsc-backend-pipeline",
+      "Pipeline lowering linalg-on-tensors backend contract to tensorsc backend "
+      "contract.",
+      TorchConversion::createTorchBackendToLinalgOnTensorsBackendPipeline);
+
+  mlir::PassPipelineRegistration<Torch::TorchLoweringPipelineOptions>(
       "torch-backend-to-linalg-on-tensors-backend-pipeline",
       "Pipeline lowering torch backend contract to linalg-on-tensors backend "
       "contract.",

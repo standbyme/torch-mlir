@@ -23,6 +23,10 @@ namespace {
 void mlir::torch::registerTorchPasses() {
   ::registerPasses();
   mlir::PassPipelineRegistration<Torch::TorchLoweringPipelineOptions>(
+      "tensorsc",
+      "Pipeline lowering TorchScript object graph IR to Torch backend form.",
+      mlir::torch::Torch::createTorchScriptModuleToTorchBackendPipeline);
+  mlir::PassPipelineRegistration<Torch::TorchLoweringPipelineOptions>(
       "torchscript-module-to-torch-backend-pipeline",
       "Pipeline lowering TorchScript object graph IR to Torch backend form.",
       mlir::torch::Torch::createTorchScriptModuleToTorchBackendPipeline);

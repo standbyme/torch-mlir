@@ -15,6 +15,7 @@ from torch_mlir.passmanager import PassManager
 from .compiler_utils import run_pipeline_with_repro_report
 from torch_mlir.dialects.torch.importer.jit_ir import ClassAnnotator, ImportOptions, ModuleBuilder
 
+from . import tensorsc
 
 class OutputType(Enum):
     """The kind of output that `torch_mlir.compile` can produce.
